@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Legends Guide - FAQ</title>
+    <link rel="stylesheet" href="websitecss.css">
+</head>
+<body>
+    <img src="logo.png" style="position: fixed; left: 10px; top: 10px; width: 80px; z-index: 9999;">
+    <header>
+        <h1>Mobile Legends Guide</h1>
+        <nav class="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="support.html">Support</a>
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+            <a href="history.html">History</a>
+            <a href="faq.html" class="active">FAQ</a>
+            <a href="payment.html">Payment</a>
+            
+        </nav>
+    </header>
+
+    <main>
+        <section class="faq-hero">
+            <h2>Frequently Asked Questions</h2>
+            <p>Find answers to common questions below.</p>
+        </section>
+
+        <section class="faq-categories">
+            <div class="category-tabs">
+                <button class="tab-btn active">General</button>
+                <button class="tab-btn">Gameplay</button>
+                <button class="tab-btn">Technical</button>
+                <button class="tab-btn">Account</button>
+            </div>
+
+            <div class="faq-content">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What is Mobile Legends?</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Mobile Legends: Bang Bang is a multiplayer online battle arena (MOBA) game designed for mobile phones. The game is free-to-play and is only monetized through in-game purchases like characters and skins. Each player can control a selectable character, called a Hero, with unique abilities and traits.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do I start playing?</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>To start playing Mobile Legends, download the app from Google Play or the App Store. Create an account using your email or social media, complete the tutorial, and you'll be ready to join your first 5v5 match in Classic Mode.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do I purchase diamonds?</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Diamonds can be purchased in-game through the Shop. Select the amount you want, then choose a payment method like Google Play, Apple Pay, or other supported services. Diamonds are used for skins, heroes, and other premium content.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How can I improve my gameplay?</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Focus on mastering a few heroes, learn their skills, and watch pro gameplay for tips. Use the Practice Mode to test builds and strategies. Communicate with teammates and always adapt your tactics based on the match.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Why I am stuck in the loading screen</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>First, check your internet connection. Then try clearing the app cache or restarting your device. If the issue continues, reinstall the app or contact support through the in-game Help Center.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="still-need-help">
+            <h3>Still Need Help?</h3>
+            <p>For more detailed support, guides, and troubleshooting, please visit our Contact Support page.</p>
+            <a href="support.html" class="support-btn">Contact Support</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Mobile Legends Guide. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('.toggle-icon');
+                
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+                icon.textContent = answer.style.display === 'block' ? '-' : '+';
+            });
+        });
+    </script>
+    <script src="javascript.js"></script>
+</body>
+</html>

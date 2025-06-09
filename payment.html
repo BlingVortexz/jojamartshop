@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Mobile Legends Diamond Shop</title>
+    <link rel="stylesheet" href="websitecss.css">
+</head>
+<body>
+    <img src="logo.png" style="position: fixed; left: 10px; top: 10px; width: 80px; z-index: 9999;">
+
+    <header>
+        <h1>Complete Your Purchase</h1>
+    </header>
+
+    <main>
+        <div class="payment-container">
+            <div class="payment-progress">
+                <div class="progress-step active" data-step="1">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Details</div>
+                </div>
+                <div class="progress-step" data-step="2">
+                    <div class="step-number">2</div>
+                    <div class="step-label">QRIS Payment</div>
+                </div>
+                <div class="progress-step" data-step="3">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Confirmation</div>
+                </div>
+            </div>
+
+            <div class="payment-forms">
+                <!-- Step 1: Player Details -->
+                <form id="userDetailsForm" class="payment-step active">
+                    <h2>Player Details</h2>
+                    <div class="form-group">
+                        <label for="gameId">Game ID</label>
+                        <input type="text" id="gameId" required placeholder="Enter your Game ID">
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="serverId">Server ID</label>
+                        <input type="text" id="serverId" required placeholder="Enter your Server ID">
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="nickname">Nickname</label>
+                        <input type="text" id="nickname" required placeholder="Enter your in-game nickname">
+                    </div>
+                    <div class="order-summary">
+                        <!-- Order summary will be filled by JavaScript -->
+                    </div>
+                    <button type="button" class="next-step">Continue to Payment</button>
+                </form>
+
+                <!-- Step 2: QRIS Payment -->
+                <form id="qrisPaymentForm" class="payment-step">
+                    <h2>QRIS Payment</h2>
+                    <div class="qris-container">
+                        <img src="images/qr-code.png" alt="QRIS Code" class="qris-code">
+                        <p class="qris-instructions">
+                            1. Open your e-wallet app<br>
+                            2. Scan this QR code<br>
+                            3. Complete the payment<br>
+                            4. Click continue after payment is done
+                        </p>
+                    </div>
+                    <div class="button-group">
+                        <button type="button" class="prev-step">Back</button>
+                        <button type="button" class="next-step">Continue to Confirmation</button>
+                    </div>
+                </form>
+
+                <!-- Step 3: Confirmation -->
+                <form id="confirmationForm" class="payment-step">
+                    <h2>Confirm Your Order</h2>
+                    <div class="confirmation-details">
+                        <div class="detail-group">
+                            <h3>Player Information</h3>
+                            <p>Game ID: <span id="confirmGameId"></span></p>
+                            <p>Server ID: <span id="confirmServerId"></span></p>
+                            <p>Nickname: <span id="confirmNickname"></span></p>
+                        </div>
+                        <div class="detail-group">
+                            <h3>Order Information</h3>
+                            <p>Package: <span id="confirmPackage"></span></p>
+                            <p>Price: <span id="confirmPrice"></span></p>
+                            <p>Payment Method: QRIS</p>
+                        </div>
+                    </div>
+                    <div class="button-group">
+                        <button type="button" class="prev-step">Back</button>
+                        <button type="button" id="confirmPayment" class="confirm-payment">Confirm Payment</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="payment.js"></script>
+    <img src="logo.png" style="position: fixed; left: 10px; top: 10px; width: 80px; z-index: 9999;">
+</body>
+</html>
